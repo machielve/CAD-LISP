@@ -10,7 +10,7 @@
 
 (setq h3 (/ h2 a1))
 (if (= (rem h2 a1) 0) (setq treden (1- h3))
-                       (setq treden (fix h3)) 
+                      (setq treden (fix h3)) 
 )
 
 (setq h5 (+ (* treden a2) 100))
