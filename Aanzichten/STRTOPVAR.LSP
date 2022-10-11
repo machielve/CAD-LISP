@@ -34,7 +34,7 @@
 
 (setq p22 (list (- (car p2) 50) (cadr p2)))
 (setq p23 (list (car p22) (cadr p3)))
-(setq p24 (list (car p22) (cadr p6)))
+(setq p24 (list (car p22) (cadr p6)))              
 (setq p25 (list (car p22) (cadr p7)))
 (setq p26 (list (+ (car p22) 25) (- (cadr p22) (/ tbw 2))))
 (setq p27 (list (+ (car p24) 25) (- (cadr p24) (/ tbw 2))))
