@@ -92,7 +92,7 @@
 (command "pline" p11 p12 p20 p21 "c")
 
 (setq h6 1)
-        (while (< h6 treden)
+    (while (< h6 treden)
         (setq h7 (list (+ (car p11) (* h6 a2)) (cadr p11))) 
         (setq h8 (list (car h7) (+ (cadr h7) h1)))
 	(setq h9 (list (+ (car h8) a2 25) (cadr h8)))
@@ -100,6 +100,8 @@
         (command "pline" h7 h8 h9 h10 "c")
         (setq h6 (1+ h6))
         )
+
+
 (command "color" "bylayer" )
 (setq p13 (list (+ (car p11) 160) (+ (cadr p11) (/ h1 2))))
 (setq p14 (list (- (car p5) 115) (cadr p13)))
