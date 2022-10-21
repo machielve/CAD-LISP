@@ -1,6 +1,6 @@
 ;zijaanzicht van een t0 trap
 
-(defun c:strside()
+(defun c:strsidefix()
 
 (command "layer" "S" "ALM_STAIR" "")
 (setq H (getreal"\nWat is de hoogte van de trap (Osnap uit F3): "))
@@ -55,7 +55,7 @@
 ;bottom-newel
 (setq p27 (list (- (car p1) G) (- (cadr p1) (- H 5))))
 (setq p28 (list (+ (car p27) 50) (cadr p27)))
-(setq p20 (list (car p28) (+ (cadr p28) (- a3 5))))
+(setq p20 (list (car p28) (+ (cadr p28) (- a3 6))))
 (setq p22 (list (car p28) (+ (cadr p20) 525)))
 (setq p21 (list (car p28) (- (cadr p22) (/ DKR (cos anglerad)))))
 (setq p24 (list (car p28) (+ (cadr p22) 525)))
@@ -67,7 +67,7 @@
 ;base-plate
 (setq p40 (list (- (car p27) 50) (cadr p27)))
 (setq p41 (list (+ (car p40) 200) (cadr p27)))
-(setq p42 (list (car p41) (- (cadr p41) 5)))
+(setq p42 (list (car p41) (- (cadr p41) 6)))
 (setq p43 (list (car p40) (cadr p42)))
 (command "pline" p40 p41 p42 p43 "c")
 
@@ -170,6 +170,8 @@
 (setq a4 (+ a4 1))
 )
 (command "color" "bylayer")
+  
+; tekenen wel trede
 
 ; block maken
 (setq mirrorpnt1 (list (- (car p43) 10) (- (cadr p43) 10)))
