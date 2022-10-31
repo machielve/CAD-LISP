@@ -37,42 +37,44 @@
 
 ;top-newel
 (setq p1 (getpoint"\nGeef het plaatsingspunt aan: "))
-(setq p2 (list (car p1) (+ (cadr p1) 1100)))
-(setq p3 (list (- (car p2) 50)(cadr p2)))
-(setq p4 (list (car p3) (- (cadr p3) 50)))
-(setq p5 (list (car p3) (- (cadr p4) (/ DHR (cos anglerad)))))
-(setq p6 (list (car p3) (- (cadr p4) 525)))
-(setq p7 (list (car p3) (- (cadr p6) (/ DKR (cos anglerad)))))
-(setq p8 (list (car p3) (- (cadr p6) 525)))
-(setq p9 (list (car p3) (- (cadr p8) (/ HSS (cos anglerad)))))
-(setq p10 (list (car p3) (- (cadr p8) 255)))
-(setq p11 (list (+ (car p9) 50) (cadr p10)))
-(setq p12 (list (car p3) (cadr p1)))
+(setq p2 (list (car p1)           (+ (cadr p1) 1100)))
+(setq p3 (list (- (car p2) 50)    (cadr p2)))
+(setq p4 (list (car p3)           (- (cadr p3) 50)))
+(setq p5 (list (car p3)           (- (cadr p4) (/ DHR (cos anglerad)))))
+(setq p6 (list (car p3)           (- (cadr p4) 525)))
+(setq p7 (list (car p3)           (- (cadr p6) (/ DKR (cos anglerad)))))
+(setq p8 (list (car p3)           (- (cadr p6) 525)))
+(setq p9 (list (car p3)           (- (cadr p8) (/ HSS (cos anglerad)))))
+(setq p10 (list (car p3)          (- (cadr p8) 255)))
+(setq p11 (list (+ (car p9) 50)   (cadr p10)))
+(setq p12 (list (car p3)          (cadr p1)))
+  
 (command "pline" p1 p2 p3 p10 p11 "c")
 (command "line" p1 p12 "")
 
 
 ;bottom-newel
-(setq p27 (list (- (car p1) G) (- (cadr p1) (- H 5))))
-(setq p28 (list (+ (car p27) 50) (cadr p27)))
-(setq p20 (list (car p28) (+ (cadr p28) (- a3 6))))
-(setq p22 (list (car p28) (+ (cadr p20) 525)))
-(setq p21 (list (car p28) (- (cadr p22) (/ DKR (cos anglerad)))))
-(setq p24 (list (car p28) (+ (cadr p22) 525)))
-(setq p23 (list (car p28) (- (cadr p24) (/ DHR (cos anglerad)))))
-(setq p25 (list (car p28) (+ (cadr p24) 50)))
-(setq p26 (list (- (car p28) 50) (cadr p25)))
+(setq p27 (list (- (car p1) G)    (- (cadr p1) (- H 5))))
+(setq p28 (list (+ (car p27) 50)  (cadr p27)))
+(setq p20 (list (car p28)         (+ (cadr p28) (- a3 6))))
+(setq p22 (list (car p28)         (+ (cadr p20) 525)))
+(setq p21 (list (car p28)         (- (cadr p22) (/ DKR (cos anglerad)))))
+(setq p24 (list (car p28)         (+ (cadr p22) 525)))
+(setq p23 (list (car p28)         (- (cadr p24) (/ DHR (cos anglerad)))))
+(setq p25 (list (car p28)         (+ (cadr p24) 50)))
+(setq p26 (list (- (car p28) 50)  (cadr p25)))
+  
 (command "pline" p27 p28 p25 p26 "c")
 
 ;base-plate
-(setq p40 (list (- (car p27) 50) (cadr p27)))
+(setq p40 (list (- (car p27) 50)  (cadr p27)))
 (setq p41 (list (+ (car p40) 200) (cadr p27)))
-(setq p42 (list (car p41) (- (cadr p41) 6)))
-(setq p43 (list (car p40) (cadr p42)))
+(setq p42 (list (car p41)         (- (cadr p41) 6)))
+(setq p43 (list (car p40)         (cadr p42)))
+  
 (command "pline" p40 p41 p42 p43 "c")
 
 ;rechtstukje op base-plate
-
 (setq hy (/ HSS (cos anglerad)))
 ;(print hy)
 (setq hv (+ (- hy a3) 5)) 
