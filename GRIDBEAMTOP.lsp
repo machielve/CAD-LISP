@@ -119,13 +119,18 @@
   (setq SS1 (ssget);(ssget "_X");(get_all_lines_as_SS)
 	PTS (get_all_inters_in_ss SS1)
         )
+  (setq LofR (strcase (getstring "\nLiggers horizontaal of verticaal (H / V): ")))
+(cond
+  ((= LofR "H") (setq direc "0"))
+  ((= LofR "V") (setq direc "90"))
+  (t (setq direc "default-value")))
   (setq ptl (length PTS)   PTS (deldup PTS)) ; duplicates - shouldn't be any
   (if (> ptl (length PTS)) (princ (strcat "\n" (itoa (- (length PTS) ptl)) " duplicates removed")))
   (vla-startundomark (vla-get-activedocument (vlax-get-acad-object)))
   (setvar "CMDECHO" 0)
   (setq oldos (getvar "OSMODE"))(setvar "OSMODE" 0)
   (foreach PT PTS ;;Loop through list of points
-    (command "-insert" "Beam Top" PT "1" "1" "0" " ")) ;;Create point object (you can also use INSERT, CIRCLE, etc. here)
+    (command "-insert" "Beam Top" PT "1" "1" direc " ")) ;;Create point object (you can also use INSERT, CIRCLE, etc. here)
  ;; (setvar "PDMODE" 34) ;;display points so you can see them
   (command "_REGEN")
   (setvar "OSMODE" oldos)
