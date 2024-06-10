@@ -125,7 +125,7 @@
   (setvar "CMDECHO" 0)
   (setq oldos (getvar "OSMODE"))(setvar "OSMODE" 0)
   (foreach PT PTS ;;Loop through list of points
-    (command "-insert" "Column Top 4-L" PT "1" "0" " ")) ;;Create point object (you can also use INSERT, CIRCLE, etc. here)
+    (command "-insert" "Column Top 4-L-B" PT "1" "0" " ")) ;;Create point object (you can also use INSERT, CIRCLE, etc. here)
  ;; (setvar "PDMODE" 34) ;;display points so you can see them
   (command "_REGEN")
   (setvar "OSMODE" oldos)
