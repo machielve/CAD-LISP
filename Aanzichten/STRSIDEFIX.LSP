@@ -42,7 +42,7 @@
 (setq p3 (list (- (car p2) 50)              (cadr p2)))                                       ;Bovenkant binnen
 (setq p12 (list (car p3)                    (cadr p1)))                                       ;Vloer niveau
   
-(setq p10 (list (car p3)                    (- (cadr p12) 208)))                              ;Onderkant newel binnen
+(setq p10 (list (car p3)                    (- (cadr p12) 255)))                              ;Onderkant newel binnen
 (setq p11 (list (car p1)                    (cadr p10)))                                      ;Onderkant newel buiten 
  
 (setq YY (/ 70 (cos anglerad)))  
@@ -61,8 +61,7 @@
 (setq p5 (list (car p3)                     (- (cadr p4) (/ DHR (cos anglerad)))))            ;Onderkant handrail
   
 (command "pline" p1 p2 p3 p10 p11 "c")                                                        ;Buitenlijn
-(command "line" p1 p12 "")                                                                    ;Vloer niveua
-
+(command "line" p1 p12 "")                                                                    ;Vloer niveau
 
 ;bottom-newel
 (setq p27 (list (- (car p1) G)              (- (cadr p1) (- H DVP))))                         ;Onderkant buiten
