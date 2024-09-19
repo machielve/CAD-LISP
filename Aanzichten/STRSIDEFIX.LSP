@@ -60,9 +60,6 @@
 (setq p4 (list (car p3)                     (+ (cadr p6) 500)) )                              ;Bovenkant handrail
 (setq p5 (list (car p3)                     (- (cadr p4) (/ DHR (cos anglerad)))))            ;Onderkant handrail
   
-
-
-  
 (command "pline" p1 p2 p3 p10 p11 "c")                                                        ;Buitenlijn
 (command "line" p1 p12 "")                                                                    ;Vloer niveua
 

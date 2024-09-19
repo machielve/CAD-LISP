@@ -37,40 +37,46 @@
 (setq DIN2 (/ DIN 2))     ;halve dikte inner newel
 
 ;top-newel
-(setq p1 (getpoint"\nGeef het plaatsingspunt aan: "))
-(setq p2 (list (car p1) (+ (cadr p1) 1100)))
-(setq p3 (list (- (car p2) 50)(cadr p2)))
-(setq p4 (list (car p3) (- (cadr p3) 50)))
-(setq p5 (list (car p3) (- (cadr p4) (/ DHR (cos anglerad)))))
-(setq p6 (list (car p3) (- (cadr p4) 525)))
-(setq p7 (list (car p3) (- (cadr p6) (/ DKR (cos anglerad)))))
-(setq p8 (list (car p3) (- (cadr p6) 525)))
-(setq p9 (list (car p3) (- (cadr p8) (/ HSS (cos anglerad)))))
-(setq p10 (list (car p3) (- (cadr p8) 255)))
-(setq p11 (list (+ (car p9) 50) (cadr p10)))
-(setq p12 (list (car p3) (cadr p1)))
-(command "pline" p1 p2 p3 p10 p11 "c")
-(command "line" p1 p12 "")
+(setq p1 (getpoint"\nGeef het plaatsingspunt aan: "))                                         ;begin punt
+(setq p2 (list (car p1)                     (+ (cadr p1) 1100)))                              ;Bovenkant newel buiten
+(setq p3 (list (- (car p2) 50)              (cadr p2)))                                       ;bovenkant newel binnen
+(setq p12 (list (car p3)                    (cadr p1)))                                       ;vloer niveau  
+  
+(setq p10 (list (car p3)                    (- (cadr p12) 255)))                              ;onderkant newel binnen
+(setq p11 (list (+ (car p10) 50)            (cadr p10)))                                      ;onderkant newel buiten 
+  
+(setq p4 (list (car p3)                     (- (cadr p3) 50)))                                ;bovenkant handrail
+(setq p5 (list (car p3)                     (- (cadr p4) (/ DHR (cos anglerad)))))            ;onderkant handrail
+  
+(setq p6 (list (car p3)                     (- (cadr p4) 525)))                               ;bovenkant knierail          
+(setq p7 (list (car p3)                     (- (cadr p6) (/ DKR (cos anglerad)))))            ;onderkant knierail
+  
+(setq p8 (list (car p3)                     (- (cadr p6) 525)))                               ;bovenkant stringer
+(setq p9 (list (car p3)                     (- (cadr p8) (/ HSS (cos anglerad)))))            ;onderkant stringer
+  
+(command "pline" p1 p2 p3 p10 p11 "c")      ;buitenlijn
+(command "line" p1 p12 "")                  ;vloer niveau
 
 
 ;bottom-newel
-(setq p27 (list (- (car p1) G) (- (cadr p1) (* treden a3) 255)))
-(setq p28 (list (+ (car p27) 50) (cadr p27)))
-(setq p20 (list (car p28) (+ (cadr p28) 255)))
-(setq p22 (list (car p28) (+ (cadr p20) 525)))
-(setq p21 (list (car p28) (- (cadr p22) (/ DKR (cos anglerad)))))
-(setq p24 (list (car p28) (+ (cadr p22) 525)))
-(setq p23 (list (car p28) (- (cadr p24) (/ DHR (cos anglerad)))))
-(setq p25 (list (car p28) (+ (cadr p24) 50)))
-(setq p26 (list (- (car p28) 50) (cadr p25)))
-(setq p40 (list (car p27) (cadr p20)))
-(setq p41 (list (car p20) (- (cadr p20) (/ HSS (cos anglerad)))))
-(command "pline" p27 p28 p25 p26 "c")
-(command "line" p20 p40 "")
+(setq p27 (list (- (car p1) G)              (- (cadr p1) (* treden a3) 255)))
+(setq p28 (list (+ (car p27) 50)            (cadr p27)))
+(setq p20 (list (car p28)                   (+ (cadr p28) 255)))
+(setq p22 (list (car p28)                   (+ (cadr p20) 525)))
+(setq p21 (list (car p28)                   (- (cadr p22) (/ DKR (cos anglerad)))))
+(setq p24 (list (car p28)                   (+ (cadr p22) 525)))
+(setq p23 (list (car p28)                   (- (cadr p24) (/ DHR (cos anglerad)))))
+(setq p25 (list (car p28)                   (+ (cadr p24) 50)))
+(setq p26 (list (- (car p28) 50)            (cadr p25)))
+(setq p40 (list (car p27)                   (cadr p20)))
+(setq p41 (list (car p20)                   (- (cadr p20) (/ HSS (cos anglerad)))))
+  
+  
+(command "pline" p27 p28 p25 p26 "c")       ;buitenlijn
+(command "line" p20 p40 "")                 ;vloer niveau
 
 
 ;rechtstukje op base-plate
-
 (setq hy (/ HSS (cos anglerad)))
 ;(print hy)
 (setq hv (+ (- hy a3) 5)) 
