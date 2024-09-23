@@ -23,12 +23,12 @@ t
 
 (setq p0 (getpoint"\nGeef het plaatsingspunt aan: "))                         ;begin punt
 (setq p1 (list (-(car p0) tnb)              (+ (cadr p0) (/ h1 2) tbw)))      ;boven stringer rechts boven
-(setq p2 (list (- (car p0) (- h5 tnb tnb))      (cadr p1)))                       ;boven stringer links boven
+(setq p2 (list (- (car p0) (- h5 tnb tnb))      (cadr p1)))                   ;boven stringer links boven
 (setq p3 (list (car p2)                     (- (cadr p2) tbw)))               ;boven stringer links onder
 (setq p4 (list (car p1)                     (cadr p3)))                       ;boven stringer rechts onder
   
 (setq p5 (list (car p1)                     (- (cadr p4) h1)))                ;onder stringer rechts boven
-(setq p6 (list (- (car p0) (- h5 tnb tnb))      (cadr p5)))                       ;onder stringer links boven
+(setq p6 (list (- (car p0) (- h5 tnb tnb))      (cadr p5)))                   ;onder stringer links boven
 (setq p7 (list (car p6)                     (- (cadr p6) tbw)))               ;onder stringer links onder
 (setq p8 (list (car p1)                     (cadr p7)))                       ;onder stringer rechts onder
   
@@ -74,7 +74,7 @@ t
 (command "color" "8" )
 (setq p11 (list (-(car p7)50) (cadr p6)))
 (setq p12 (list (car p11) (+ (cadr p11) h1)))
-(setq p20 (list (+ (car p12) a2 25) (cadr p12)))
+(setq p20 (list (+ (car p12) a2 15) (cadr p12)))
 (setq p21 (list (car p20) (cadr p11)))
 (command "pline" p11 p12 p20 p21 "c")
 

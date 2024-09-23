@@ -85,7 +85,7 @@
 (command "color" "8" )
 (setq p100 (list (+ (car p70) tnb)          (cadr p70)))
 (setq p101 (list (car p100)                 (+ (cadr p100) h1)))
-(setq p102 (list (+ (car p101) a2 25)       (cadr p101)))
+(setq p102 (list (+ (car p101) a2 15)       (cadr p101)))
 (setq p103 (list (car p102)                 (cadr p100)))
   
 (command "pline" p100 p101 p102 p103 "c")

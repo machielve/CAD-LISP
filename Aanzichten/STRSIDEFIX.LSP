@@ -178,8 +178,8 @@
 (setq a5 (* a2 a4))
 (setq a6 (* a3 a4))
       (setq p81 (list (+ (car p20) a5)              (+ (cadr p20) a6)))
-      (setq p82 (list (+ (car p81) a2 25)           (cadr p81)))
-      (setq p83 (list (car p82)                     (- (cadr p82) 45)))
+      (setq p82 (list (+ (car p81) a2 15)           (cadr p81)))
+      (setq p83 (list (car p82)                     (- (cadr p82) 40)))
       (setq p84 (list (car p81)                     (cadr p83))) 
 (command "pline" p81 p82 p83 p84 "c")
 (setq a4 (+ a4 1))
@@ -193,7 +193,7 @@
 
       (setq p81 (list (+ (car p20) a5)              (+ (cadr p20) a6)))
       (setq p82 (list (+ (car p81) 120)             (cadr p81)))
-      (setq p83 (list (car p82)                     (- (cadr p82) 45)))
+      (setq p83 (list (car p82)                     (- (cadr p82) 40)))
       (setq p84 (list (car p81)                     (cadr p83))) 
 (command "pline" p81 p82 p83 p84 "c")
 

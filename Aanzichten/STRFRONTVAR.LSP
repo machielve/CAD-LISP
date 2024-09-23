@@ -72,7 +72,7 @@
         (while (<= h6 h4)
         (setq h7 (list (car p8) (+ (cadr p8) (* h6 rise)))) 
         (setq h8 (list (car p4) (cadr h7)))
-        (setq h9 (list (car p4) (- (cadr h7) 50)))
+        (setq h9 (list (car p4) (- (cadr h7) 40)))
         (setq h10 (list (car p8) (cadr h9)))
 
         (command "pline" h7 h8 h9 h10 "")
