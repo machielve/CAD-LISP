@@ -27,7 +27,7 @@ entsel
 )
 )
 )
-(princ "\nSelect blocks to be repalced: ")
+(princ "\nSelect blocks to be replaced: ")
 (setq ss (ssget "_:L" '((0 . "INSERT"))))
 )
 (progn
