@@ -1,7 +1,7 @@
 ;bovenaanzicht van een trap
 
 (defun c:str3top()
-(command "layer" "S" "ALM_STAIR" "")
+(command "layer" "S" "0" "")
 (setq h2 (getreal"\nWat is de hoogte van de trap: "))
 (setq h1 (getreal"\nWat is de breedte van de trap: "))
 (setq a1 210)
@@ -116,6 +116,7 @@
 (setq rpt2 (list (+ (car p10) 100) (+ (cadr p10) 100)))
 (setq bloknaam (strcat "stairtop_3_" (rtos h2) "x" (rtos h1)))
 (command "block" bloknaam p0 "w" rpt1 rpt2 "")
+(command "layer" "S" "ALM_STAIR" "")
 (command "insert" bloknaam p0 "" "" "")
 
 )
