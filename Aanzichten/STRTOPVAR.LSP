@@ -1,7 +1,7 @@
 ;bovenaanzicht van een t0 trap var
 
 (defun c:strtopvar()
-(command "layer" "S" "ALM_STAIR" "")
+(command "layer" "S" "0" "")
 (setq h2 (getreal"\nWat is de hoogte van de trap (Osnap uit F3): "))
 (setq h1 (getreal"\nWat is de breedte van de trap: "))
 (setq a1 (getreal"\nWat is de maximale optrede van de trap: "))
@@ -119,6 +119,7 @@
 (setq rpt2 (list (+ (car p0) 50)        (+ (cadr p1) 50)))
 (setq bloknaam (strcat "stairtop_0_var_" (rtos h2) "x" (rtos h1)))
 (command "block" bloknaam p0 "w" rpt1 rpt2 "")
+(command "layer" "S" "ALM_STAIR" "")
 (command "insert" bloknaam p0 "" "" "")
 
 )
