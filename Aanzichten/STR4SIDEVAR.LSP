@@ -2,7 +2,7 @@
 
 (defun c:str4sidevar()
 
-(command "layer" "S" "ALM_STAIR" "")
+(command "layer" "S" "0" "")
 (setq H (getreal"\nWat is de hoogte van de trap (Osnap uit F3): "))
 (setq a1 (getreal"\nWat is de maximale optrede van de trap: "))
 (setq a2 (getreal"\nWat is de aantrede van de trap: "))
@@ -211,6 +211,7 @@
 (setq H (- H a3))
 (setq bloknaam (strcat "stairside_4_var_" (rtos H)))
 (command "block" bloknaam p1 "w" mirrorpnt1 mirrorpnt2 "")
+(command "layer" "S" "ALM_STAIR" "")
 (command "insert" bloknaam p1 "" "" "")
 
 (if (= LofR "R") 
