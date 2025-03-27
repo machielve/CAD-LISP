@@ -2,7 +2,7 @@
 
 (defun c:str1side()
 
-(command "layer" "S" "ALM_STAIR" "")
+(command "layer" "S" "0" "")
 (setq H (getreal"\nWat is de hoogte van de trap (Osnap uit F3): "))
 (setq a1 210)
 (setq a2 225)
@@ -176,6 +176,7 @@
 (setq mirrorpnt2 (list (+ (car p2) 35) (+ (cadr p2) 10)))
 (setq bloknaam (strcat "stairside_1_" (rtos H)))
 (command "block" bloknaam p1 "w" mirrorpnt1 mirrorpnt2 "")
+(command "layer" "S" "ALM_STAIR" "")
 (command "insert" bloknaam p1 "" "" "")
 
 (if (= LofR "R") 
