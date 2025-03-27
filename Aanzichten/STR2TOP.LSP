@@ -1,7 +1,7 @@
 ;bovenaanzicht van een t2 trap
 
 (defun c:str2top()
-(command "layer" "S" "ALM_STAIR" "")
+(command "layer" "S" "0" "")
 (setq h2 (getreal"\nWat is de hoogte van de trap (Osnap uit F3): "))
 (setq h1 (getreal"\nWat is de breedte van de trap: "))
 (setq a1 210)
@@ -106,6 +106,7 @@
 (setq rpt2 (list (+ (car p1) 100) (+ (cadr p1) 100)))
 (setq bloknaam (strcat "stairtop_2_" (rtos h2) "x" (rtos h1)))
 (command "block" bloknaam p0 "w" rpt1 rpt2 "")
+(command "layer" "S" "ALM_STAIR" "")
 (command "insert" bloknaam p0 "" "" "")
 
 )
