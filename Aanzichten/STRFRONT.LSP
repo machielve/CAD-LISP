@@ -51,7 +51,7 @@
 (setq p71 (list (+ (car p8) SSB) (cadr p8)))
   
 
-(command "layer" "S" "ALM_STAIR" "")
+(command "layer" "S" "0" "")
 (command "pline" p2 p3 p4 p5 "c")               ;stringer 1 + handrail 1
 (command "pline" p6 p7 p8 p9 "c")               ;stringer 2 + handrail 2
 (command "pline" p60 p61 p4 p10 "c")            ;new stringer 1  
@@ -79,6 +79,8 @@
         (setq h6 (1+ h6))
         )
 (command "color" "bylayer" )
+  
+(command "layer" "S" "ALM_STAIR" "")
 
 (setq bpt1 (list (- (car p3) 10) (- (cadr p3) 10)))
 (setq bpt2 (list (+ (car p6) 10) (+ (cadr p6) 10)))
